@@ -1,0 +1,148 @@
+{% load static %}
+
+<header
+  class="flex flex-row w-full items-center px-2 md:px-20 py-1 md:py-3 bg-[#038d63] shadow-md relative"
+>
+  <div class="flex w-full items-center justify-between text-gray-50">
+    <div class="">
+      <a href="{% url 'home' %}" class="text-2xl md:text-3xl font-bold">
+        <span class="text-white">VI</span
+        ><span class="text-stone-200 ml-1">CART</span>
+      </a>
+    </div>
+
+    <div class="hidden md:block">
+      <div class="relative">
+        <button
+          type="button"
+          id="category"
+          class="w-36 bg-white text-[#038d63] py-[5px] rounded"
+          onClick="toggleDropdown()"
+        >
+          <i class="fa fa-bars"></i> All category
+        </button>
+        <div
+          class="dropdown hidden py-6 px-4 absolute w-full overflow-hidden flex flex-col rounded-sm shadow-sm border border-stone-200 bg-stone-50 mt-2 space-y-2 text-[#038d63]"
+        >
+          <a class="" href="{% url 'home' %}">All Products</a>
+          <a class="" href="{% url 'home' %}">All Products</a>
+          <a class="" href="{% url 'home' %}">All Products</a>
+          <a class="" href="{% url 'home' %}">All Products</a>
+          <a class="" href="{% url 'home' %}">All Products</a>
+        </div>
+      </div>
+    </div>
+
+    <a
+      href="{% url 'home' %}"
+      class="border px-6 py-[5px] bg-white text-[#038d63] rounded hidden md:block"
+      >Store</a
+    >
+
+    <div class="w-[36%] text-[#038d63] hidden md:block">
+      <form action="{% url 'home' %}" class="" method="GET">
+        <div class="flex justify-center bg-white rounded">
+          <input
+            type="text"
+            class="text-[#038d63] ml-2 border-0 outline-0 active:outline-0"
+            style="width: 100%"
+            placeholder="Search.."
+            name="keyword"
+          />
+            <button class=" border-none" type="submit">
+              <i class="ri-search-line text-[#038d63] text-xl mr-2"></i>
+            </button>
+        </div>
+      </form>
+    </div>
+
+    <div class="">
+      <div class="flex justify-around items-center space-x-8">
+        {% comment %} {% if user.id is None %} {% endcomment %}
+          <div class="hidden md:block">
+            <small class="">Welcome guest!</small>
+            <div>
+              <a href="{% url 'home' %}">Sign in</a> <span class=""> | </span>
+              <a href="{% url 'home' %}"> Register</a>
+            </div>
+          </div>
+        {% comment %} {% else %}
+          <div class="hidden md:block">
+            <small class="">Welcome {{user.first_name}}!</small>
+            <div>
+              <a href="{% url 'login' %}">Dashboard</a> <span class=""> | </span>
+              <a href="{% url 'register' %}"> Logout</a>
+            </div>
+          </div> {% endcomment %}
+        
+        
+        
+        
+        
+        
+        
+        
+        <a href="{% url 'home' %}" class="">
+          <div class="text-lg relative">
+            <i class="fa fa-shopping-cart"></i>
+            <span
+              class="bg-red-500 p-1 text-xs rounded-full -mt-1 md:-mt-2 absolute inline-block"
+              >1</span
+            >
+          </div>
+        </a>
+        <i class="menu fa-solid fa-bars inline-block md:hidden text-lg" onClick="toggleSidebar(true)"></i>
+        <i class="close fa-solid fa-xmark inline-block md:hidden text-xl" onClick="toggleSidebar(false)" style="display: none"></i>
+      </div>
+    </div>
+  </div>
+
+  {% comment %} sidebar {% endcomment %}
+  <div class="block md:hidden h-dvh w-[80%] bg-green-200/80 backdrop-blur-sm absolute top-0 left-0 duration-500" id="sidebar" style="left: -100%">
+    
+    <ul class="h-[50%] my-auto w-[80%] ml-auto mr-0 mt-20 space-y-4">
+      <li>
+        Category
+      </li>
+      <li>
+        Store
+      </li>
+      <li>
+        Search
+      </li>
+      <li>
+        Sign in
+      </li>
+      <li>
+        Register
+      </li>
+    </ul>
+  </div>
+</header>
+
+<script>
+  function toggleDropdown() {
+    const dropdown = document.querySelector(".dropdown");
+    dropdown.classList.toggle("hidden");
+  }
+  
+  function toggleSidebar(flag) {
+    const sidebar = document.querySelector("#sidebar");
+    const menu = document.querySelector(".menu");
+    const close = document.querySelector(".close");
+    console.log("flag="+flag);
+    if(flag){
+      sidebar.style.left="0"
+      menu.style.display="none";
+      close.style.display="inline-block";
+      document.body.style.overflow="hidden";
+      flag=false
+    }else{
+      sidebar.style.left="-100%";
+      menu.style.display="inline-block";
+      close.style.display="none";
+      document.body.style.overflow="auto";
+      flag=true
+    }
+  }
+</script>
