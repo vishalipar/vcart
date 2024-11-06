@@ -1,0 +1,191 @@
+{% extends "index.html" %} {% block title %}store{% endblock %} 
+{% block content %}
+
+<div>
+  <div
+    class="text-lg md:text-3xl font-bold px-2 md:px-20 py-4 md:py-8 text-[#038d63]"
+  >
+    <h2>Our Store</h2>
+  </div>
+
+  <div class="md:flex md:h-[73vh] px-2 md:px-20">
+    <div
+      class="bg-green-200 h-fit w-full md:w-[25%] p-2 space-y-2 md:space-y-0"
+    >
+      <div class="w-full max-w-xs mx-auto">
+        <!-- Category 1: Products -->
+        <div x-data="{ open: false }" class="mb-4">
+          <button
+            @click="open = !open"
+            class="flex justify-between w-full text-left text-[#038d63] py-2 px-4 rounded-md"
+          >
+            Categories
+            <p><i class="fa-solid fa-caret-down"></i></p>
+          </button>
+          <ul x-show="open" class="pl-4 mt-2 space-y-2 text-gray-700">
+            <li>All Products</li>
+            <li>Shirts</li>
+            <li>T-shirts</li>
+            <li>Jeans</li>
+          </ul>
+        </div>
+
+        <!-- Category 2: Size -->
+        <div x-data="{ open: false }" class="mb-4">
+          <button
+            @click="open = !open"
+            class="flex justify-between w-full text-left text-[#038d63] py-2 px-4 rounded-md"
+          >
+            Sizes
+            <p><i class="fa-solid fa-caret-down"></i></p>
+            
+          </button>
+          <ul x-show="open" class="flex gap-2 pl-4 mt-2 space-y-2 text-stone-800">
+            <li><button class="border border-stone-300 text-sm font-bold py-1 px-1 mt-2 rounded">XS</button></li>
+            <li><button class="border border-stone-300 text-sm font-bold py-1 px-1 rounded">SM</button></li>
+            <li><button class="border border-stone-300 text-sm font-bold py-1 px-1 rounded">LG</button></li>
+            <li><button class="border border-stone-300 text-sm font-bold py-1 px-1 rounded">XXL</button></li>
+          </ul>
+        </div>
+
+        <!-- Category 3: Price Range -->
+        <div x-data="{ open: false }" class="mb-4">
+          <button
+            @click="open = !open"
+            class="flex justify-between w-full text-left text-[#038d63] py-2 px-4 rounded-md"
+          >
+            Price Range
+            <p><i class="fa-solid fa-caret-down"></i></p>
+            
+          </button>
+          <ul x-show="open" class="pl-4 mt-2 space-y-2 text-gray-700">
+            <div>
+                <div class='flex justify-between'>
+                    Min
+                    <p>Max</p>
+                </div>
+                <div class="flex justify-between">
+                    <button class="">
+                        <select name="" id="" class="border-stone-200 rounded">
+                            <option value="" selected>₹0</option>
+                            <option value="">₹50</option>
+                            <option value="">₹100</option>
+                            <option value="">₹150</option>
+                            <option value="">₹200</option>
+                            <option value="">₹500</option>
+                            <option value="">₹1000</option>
+                        </select>
+                    </button>
+                    <button class="">
+                        <select name="" id="" class="border-stone-200 rounded">
+                            <option value="" selected>₹50</option>
+                            <option value="">₹100</option>
+                            <option value="">₹150</option>
+                            <option value="">₹200</option>
+                            <option value="">₹500</option>
+                            <option value="">₹1000</option>
+                        </select>
+                    </button>
+                </div>
+                <div>
+                    <button class='bg-[#038d63] text-white w-full py-2 rounded mt-2'>Apply</button>
+                </div>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+    {% comment %} right box {% endcomment %}
+    <div class="w-full ml-0 md:ml-8 space-y-2 md:space-y-4">
+      <h3 class="">6 Items found</h3>
+
+      <div
+        class="md:flex gap-6 md:justify-between h-[180vh] md:h-[54vh] w-full pt-5"
+      >
+        <div
+          class="border-2 h-[56vh] md:h-[100%] w-[80%] md:w-[30%] rounded mx-8 md:mx-auto mb-4"
+        >
+          <div class="mx-4 w-[90%]">
+            <a href="{% url 'prod_detail' %}">
+              <img
+                src="https://www.photographmyproduct.co.uk/wp-content/uploads/2020/10/Shoes-product-photography-photograph-my-product-20200117-30.jpg"
+                alt=""
+              />
+            </a>
+          </div>
+          <div class="mx-4">
+            <h3 class="text-lg text-[#038d63]">
+              <a href="{% url 'prod_detail' %}">Product name</a>
+            </h3>
+            <p class="font-bold">₹ 2000</p>
+            <a href="{% url 'prod_detail' %}">
+              <button class="bg-[#038d63] text-white w-full mt-4 py-2 rounded">
+                View Details
+              </button>
+            </a>
+          </div>
+          <div></div>
+        </div>
+        <div
+          class="border-2 h-[56vh] md:h-[100%] w-[80%] md:w-[30%] rounded mx-8 md:mx-auto mb-4"
+        >
+          <div class="mx-4 w-[90%]">
+            <a href="{% url 'prod_detail' %}">
+              <img
+                src="https://www.photographmyproduct.co.uk/wp-content/uploads/2020/10/Shoes-product-photography-photograph-my-product-20200117-30.jpg"
+                alt=""
+              />
+            </a>
+          </div>
+          <div class="mx-4">
+            <h3 class="text-lg text-[#038d63]">
+              <a href="{% url 'prod_detail' %}">Product name</a>
+            </h3>
+            <p class="font-bold">₹ 2000</p>
+            <a href="{% url 'prod_detail' %}">
+              <button class="bg-[#038d63] text-white w-full mt-4 py-2 rounded">
+                View Details
+              </button>
+            </a>
+          </div>
+          <div></div>
+        </div>
+        <div
+          class="border-2 h-[56vh] md:h-[100%] w-[80%] md:w-[30%] rounded mx-8 md:mx-auto mb-4"
+        >
+          <div class="mx-4 w-[90%]">
+            <a href="{% url 'prod_detail' %}">
+              <img
+                src="https://www.photographmyproduct.co.uk/wp-content/uploads/2020/10/Shoes-product-photography-photograph-my-product-20200117-30.jpg"
+                alt=""
+              />
+            </a>
+          </div>
+          <div class="mx-4">
+            <h3 class="text-lg text-[#038d63]">
+              <a href="{% url 'prod_detail' %}">Product name</a>
+            </h3>
+            <p class="font-bold">₹ 2000</p>
+            <a href="{% url 'prod_detail' %}">
+              <button class="bg-[#038d63] text-white w-full mt-4 py-2 rounded">
+                View Details
+              </button>
+            </a>
+          </div>
+          <div></div>
+        </div>
+      </div>
+      {% comment %} preview pages {% endcomment %}
+      <div class="flex text-md md:text-lg text-stone-800 ml-4">
+        <a href="" class="border border-stone-800 px-2 rounded-l">Preview</a>
+        <a href="" class="border border-stone-800 px-2">1</a>
+        <a href="" class="border border-stone-800 px-2">2</a>
+        <a href="" class="border border-stone-800 px-2 rounded-r">Next</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2" defer></script>
+
+{% endblock %}

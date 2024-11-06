@@ -1,0 +1,118 @@
+{% extends "index.html" %}
+{% block title %}product detail{% endblock %}
+{% block content %}
+
+<div class='mb-[83vh] md:mb-2'>
+    <div class='mt-4 md:mt-14 mx-2 md:mx-[10%] h-[170vh] md:h-fit w-[95%] md:w-[80%]'>
+        <div class='md:flex h-[78vh] border border-gray-200'>
+            <div class='w-full md:w-[50%] h-full'>
+                <div class='flex justify-center h-[85%]'>
+                    <img class='h-full' src="https://www.photographmyproduct.co.uk/wp-content/uploads/2020/10/Shoes-product-photography-photograph-my-product-20200117-30.jpg" alt="">
+                </div>
+                <div class='flex space-x-2 p-2 w-full h-fit'>
+                    <img class='h-[9vh] border border-stone-800' src="https://www.photographmyproduct.co.uk/wp-content/uploads/2020/10/Shoes-product-photography-photograph-my-product-20200117-30.jpg" alt="">
+                    <img class='h-[9vh] border border-stone-800' src="https://www.photographmyproduct.co.uk/wp-content/uploads/2020/10/Shoes-product-photography-photograph-my-product-20200117-30.jpg" alt="">
+                    <img class='h-[9vh] border border-stone-800' src="https://www.photographmyproduct.co.uk/wp-content/uploads/2020/10/Shoes-product-photography-photograph-my-product-20200117-30.jpg" alt="">
+                    <img class='h-[9vh] border border-stone-800' src="https://www.photographmyproduct.co.uk/wp-content/uploads/2020/10/Shoes-product-photography-photograph-my-product-20200117-30.jpg" alt="">
+                    
+                </div>
+            </div>
+            <div class='w-full md:w-[50%] h-full border-l border-gray-200'>
+                <div class='m-4 md:m-8'>
+                    <div>
+                        <div class='text-xl md:text-3xl text-stone-700 font-bold'>
+                            Product-Name
+                        </div>
+                        <div class='my-4'>
+                            stars 1 review
+                            <p class='text-xl md:text-2xl text-stone-800 font-bold'>₹ 2000</p>
+                        </div>
+                        <div>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab corporis quibusdam sunt velit. Dicta, ipsa?
+                        </div>
+                    </div>
+                    <form action="{% url 'home' %}">
+                        <div class='border-t border-gray-200 mt-4 mb-2 md:mb-8 pt-4 space-y-4'>
+                            <div class='space-y-2'>
+                                <label for="" class='font-bold text-stone-700 '>Choose color</label><br>
+                                <select name="" id="" class='text-stone-700 py-1 rounded'>
+                                    <option value="" selected disabled>Select</option>
+                                    <option value="">Purple</option>
+                                    <option value="">Red</option>
+                                    <option value="">Blue</option>
+                                </select>
+                            </div>
+                            <div class='space-y-2'>
+                                <label for="" class='font-bold text-stone-700 '>Select Size</label><br>
+                                <select name="" id="" class='text-stone-700 py-1 rounded'>
+                                    <option value="" selected disabled>Select</option>
+                                    <option value="">Small</option>
+                                    <option value="">Medium</option>
+                                    <option value="">Large</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class='pt-4 border-t border-gray-200'>
+                            <button type='submit' class='bg-[#038d63] px-4 py-2 rounded text-white'>
+                                Add to cart
+                                <i class="fa-solid fa-cart-shopping pl-4"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class='text-stone-700 h-[80vh] w-full md:w-[75%] mt-4 pt-[70vh] md:pt-1'>
+            <div class='space-y-4'>
+                <div class='text-xl  font-bold'>
+                    Write Your Review
+                </div>
+                <div class='space-y-4'>
+                    <p>How do you rate this product?</p>
+                    stars
+                    <div class='flex flex-col'>
+                        <label for="">Review Title:</label>
+                        <input type="text" class='border-stone-300 rounded'>
+                    </div>
+                    <div class='flex flex-col'>
+                        <label for="">Review:</label>
+                        <textarea type="text" class='border-stone-300 rounded' rows='4'></textarea>
+                    </div>
+                    <p>You must be logged in to post a review. <a href="{% url 'home' %}" class='text-[#038d63]'> Login now</a></p>
+                </div>
+                <div class='pt-4'>
+                    <div class='text-xl md:text-3xl font-bold'>
+                        <p>Customer Reviews</p>
+                    </div>
+                    <div>
+                        stars 
+                        1 reviews
+                        <div class='border border-stone-300 p-4 w-full h-fit space-y-2 md:space-y-4 mt-4 rounded'>
+                            <div class='flex justify-between'>
+                                <div>
+                                    <p class='font-bold'>vishal ipar</p>
+                                    stars
+                                </div>
+                                <p class='text-sm md:text-md text-stone-500'>Oct. 30, 2024, 3:36 p.m.</p>
+                            </div>
+                            <div class=''>
+                                <p class='font-bold'>Nice shoe</p>
+                                <p>This is nice shoes.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            <div>
+                
+            </div>
+        </div>
+    </div>
+    <div></div>
+    <div></div>
+</div>
+
+
+{% endblock %}
