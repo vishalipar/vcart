@@ -6,6 +6,8 @@ from django.shortcuts import redirect, render
 from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
+from django.contrib.auth.decorators import login_required
+
 
 # from cart.models import Cart
 
@@ -88,3 +90,9 @@ def login(request):
     
     return render(request, 'accounts/login.html')
     
+
+@login_required(login_url = 'login')
+def logout(request):
+    auth.logout(request)
+    messages.success(request,"You are logged out.")
+    return redirect('login')

@@ -1,0 +1,92 @@
+{% extends "index.html" %}
+{% block title %}cart{% endblock %}
+{% block content %}
+
+<div class='flex justify-center border-b border-stone-200 w-full h-fit'>
+    <div class='md:flex justify-between mx-1 md:mx-8 my-8 w-full md:w-[80%] h-fit'>
+        {% comment %} left box {% endcomment %}
+        <div class='border border-stone-200 w-full md:w-[74%] h-[26vh] md:h-[20vh] rounded'>
+            <div class='flex justify-between m-0 md:m-4 h-[17vh]'>
+                <div>
+                    <p class='text-stone-400 text-sm font-bold'>PRODUCT</p>
+                    <div class='md:flex h-[10vh] md:h-[12vh] ml-0 md:ml-2'>
+                        <img
+                            src="https://www.photographmyproduct.co.uk/wp-content/uploads/2020/10/Shoes-product-photography-photograph-my-product-20200117-30.jpg"
+                            alt="" class='h-full'
+                        />
+                        <div class='p-1 md:p-4'>
+                            <p class='text-[12px] md:text-md'>Product-Name</p>
+                            <div class='flex flex-col text-[11px] md:text-sm text-stone-500'>
+                                <p>Color : White</p>
+                                <p>Size : Medium</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+                <div class=''>
+                    <p class='text-stone-400 text-sm font-bold'>QUANTITY</p>
+                    <div class='w-fit mt-4'>
+                        <button class='border border-stone-300 px-2 py-1 rounded-l'><i class="fa fa-minus"></i></button>
+                        <button class='border border-stone-300 px-2 py-1'>1</button>
+                        <button class='border border-stone-300 px-2 py-1 rounded-r'><i class="fa fa-plus"></i></button>
+                    </div>
+                </div>
+                <div class=''>
+                    <p class='text-stone-400 text-sm font-bold'>PRICE</p>
+                    
+                    <div class='mt-4 text-sm text-stone-500'>
+                        <p class='font-bold text-stone-700'>₹ 2000</p>
+                        ₹ 2000 each
+                    </div>
+                </div>
+                <div class='h-full'>
+                    <button class='hidden md:block mt-8 mr-8 bg-red-500 text-md text-white px-4 py-2 rounded'>
+                        <a href="">Remove</a>
+                    </button>
+                    <a href="" class='block md:hidden text-red-600 text-lg py-8 pr-2'>
+                        <i class="fa fa-solid fa-xmark"></i>
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+        {% comment %} right box {% endcomment %}
+        <div class='border border-stone-200 w-full md:w-[24%] h-[41vh] rounded'>
+            <div class="w-[90%] h-full mx-4 my-8">
+                <div class='space-y-2 mb-4'>
+                    <div class='flex justify-between text-stone-800'>
+                        <p>Total price :</p>
+                        <p>₹ 2000</p>
+                    </div>
+                    <div class='flex justify-between text-stone-800'>
+                        <p>Tax :</p>
+                        <p>₹ 40.04</p>
+                    </div>
+                    <div class='flex justify-between text-stone-800'>
+                        <p>Total :</p>
+                        <p class='font-bold'>₹ 2040.04</p>
+                    </div>
+                </div>
+                <div class='border-t border-gray-200 py-2'>
+                    <center>Paypal Visa Images</center>
+                </div>
+                <div>
+                    <a href="{% url 'cart' %}">
+                        <button class='bg-[#038d63] px-2 py-2 my-1 md:my-4 rounded w-full text-white'>Checkout</button>
+                    </a>
+                    <a href="{% url 'store' %}">
+                        <button class='border border-stone-200 px-2 py-2 rounded w-full'>Continue Shopping</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
