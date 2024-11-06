@@ -1,0 +1,73 @@
+{% extends "index.html" %} {% block title %}login{% endblock %} 
+{% block content %}
+
+<section class="mx-2 section-conten p-y" style="min-height: 64vh">
+  <!-- ============================ COMPONENT LOGIN   ================================= -->
+
+  {% if request.GET.command == 'verification' %} {% comment %} email sent
+  message {% endcomment %}
+  <div
+    class="bg-green-400 py-4 text-medium md:text-lg text-stone-900 container mx-auto alert alert-info text-center"
+    role="alert"
+    style="max-width: 1024px; margin-top: 100px"
+  >
+    We have sent you verification email to your email address.
+    [{{request.GET.email}}]
+
+    <br /><br />
+    Already verified?
+    <a href="{% url 'login' %}" class="text-blue-900">Login</a>
+  </div>
+
+  {% else %} {% comment %} login form {% endcomment %}
+  <div class="flex justify-center items-center h-[82vh] w-full">
+    <div
+      class="h-[69vh] md:h-[58vh] w-[96%] md:w-[26%] border border-gray-500 rounded pt-8 px-8"
+    >
+      <div class="text-stone-700 text-2xl font-bold">Sign in</div>
+      {% include "include/alerts.html" %}
+
+      <form action="{% url 'login' %}" method='post'>
+        {% csrf_token %}
+        <div class="mt-8 space-y-4">
+          <input
+            name="email"
+            class="w-full rounded-lg"
+            type="email"
+            placeholder="Email Address"
+          />
+          <input
+            name="password"
+            class="w-full rounded-lg"
+            type="password"
+            placeholder="Password"
+          />
+        </div>
+        <div class="flex justify-end mt-4 mb-4 text-[#038d63]">
+          <a href="">Forgot password?</a>
+        </div>
+        <div>
+          <button
+            type="submit"
+            class="bg-[#038d63] w-full text-white py-2 mb-8 rounded-lg"
+          >
+            Login
+          </button>
+        </div>
+      </form>
+      <div class="mb-4 pb-4 border-b border-t border-stone-400">
+        <p class="text-stone-800 font-bold mt-2">Buying for work?</p>
+        <a href="{% url 'login' %}" class="text-[#038d63]"
+          >Shop on vicart Business</a
+        >
+      </div>
+      <div class="">
+        <center class="" for="">
+          Dont have account?
+          <a href="{% url 'register' %}" class="text-[#038d63]">Sign up</a>
+        </center>
+      </div>
+    </div>
+  </div>
+  {% endif %} {% endblock %}
+</section>
