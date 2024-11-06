@@ -1,0 +1,24 @@
+{% if messages %}
+
+    {% for message in messages %}
+    <div class="container" id="message">
+        <div {% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %} role='alert'>
+            <button type='button' class='close' data-dismiss='alert'><span aira-hidden='true'>&times;</span></button>
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Error: {% endif %}
+            {{ message }}
+        </div>
+    </div>
+    {% endfor %}
+    
+    <script>
+        function removeMessageComponent() {
+            let messageComponent = document.querySelector("#message");
+            setTimeout(() => {
+                messageComponent.style.display = "none";
+            }, 3000);
+        }
+        
+        removeMessageComponent();
+    </script>
+    
+{% endif %}
